@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src", "src\src.csproj", "{520DE295-B3AC-44EA-8EEC-E7F5709D82EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6FB06213-CC2E-49A7-A6B6-05D24BDACB3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServices.Test", "test\AuthServices.Test\AuthServices.Test.csproj", "{417912F3-0DFE-41BB-922C-3694DE8EDB44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenServices.Test", "test\TokenServices.Test\TokenServices.Test.csproj", "{9B201624-A262-47FE-852D-BD9D96FD4A91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,17 @@ Global
 		{520DE295-B3AC-44EA-8EEC-E7F5709D82EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{520DE295-B3AC-44EA-8EEC-E7F5709D82EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{520DE295-B3AC-44EA-8EEC-E7F5709D82EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{417912F3-0DFE-41BB-922C-3694DE8EDB44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{417912F3-0DFE-41BB-922C-3694DE8EDB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{417912F3-0DFE-41BB-922C-3694DE8EDB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{417912F3-0DFE-41BB-922C-3694DE8EDB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B201624-A262-47FE-852D-BD9D96FD4A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B201624-A262-47FE-852D-BD9D96FD4A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B201624-A262-47FE-852D-BD9D96FD4A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B201624-A262-47FE-852D-BD9D96FD4A91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{417912F3-0DFE-41BB-922C-3694DE8EDB44} = {6FB06213-CC2E-49A7-A6B6-05D24BDACB3C}
+		{9B201624-A262-47FE-852D-BD9D96FD4A91} = {6FB06213-CC2E-49A7-A6B6-05D24BDACB3C}
 	EndGlobalSection
 EndGlobal
