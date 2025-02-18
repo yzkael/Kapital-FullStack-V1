@@ -15,6 +15,10 @@ builder.Services.AddServiceExtension(builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseExceptionHandler();
+app.UseHttpsRedirection();
 await app.InitialiseDatabaseAsync();
 app.AddAppExtension();
+app.UseAuthorization();
+app.MapControllers();
 app.Run();

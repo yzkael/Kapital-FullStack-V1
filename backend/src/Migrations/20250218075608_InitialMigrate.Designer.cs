@@ -12,7 +12,7 @@ using src.Data;
 namespace src.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250216080401_InitialMigrate")]
+    [Migration("20250218075608_InitialMigrate")]
     partial class InitialMigrate
     {
         /// <inheritdoc />
@@ -177,6 +177,9 @@ namespace src.Migrations
 
                     b.Property<DateTimeOffset>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset>("LastUpdateAt")
                         .HasColumnType("timestamp with time zone");

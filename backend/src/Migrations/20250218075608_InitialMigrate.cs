@@ -37,7 +37,8 @@ namespace src.Migrations
                     Carnet = table.Column<string>(type: "text", nullable: false),
                     Telefono = table.Column<string>(type: "text", nullable: false),
                     CreatedAt = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
-                    LastUpdateAt = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false)
+                    LastUpdateAt = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false)
                 },
                 constraints: table =>
                 {

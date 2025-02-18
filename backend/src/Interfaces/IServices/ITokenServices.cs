@@ -8,6 +8,7 @@ namespace src.Interfaces.IServices
 {
     public interface ITokenServices
     {
-        public Task<string> CreateAccessToken(Usuario usuario);
+        public Task<string> CreateAccessTokenAsync(Usuario usuario);
+        public string CreateRefreshToken(Usuario usuario);
     }
 }

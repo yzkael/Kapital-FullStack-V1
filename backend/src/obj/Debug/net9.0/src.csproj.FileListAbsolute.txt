@@ -152,3 +152,4 @@
 /home/ismael/Documents/GitHub/Kapital-FullStack-V1/backend/src/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll
 /home/ismael/Documents/GitHub/Kapital-FullStack-V1/backend/src/bin/Debug/net9.0/Newtonsoft.Json.dll
 /home/ismael/Documents/GitHub/Kapital-FullStack-V1/backend/src/bin/Debug/net9.0/Newtonsoft.Json.Bson.dll
+/home/ismael/Documents/GitHub/Kapital-FullStack-V1/backend/src/obj/Debug/net9.0/src.sourcelink.json

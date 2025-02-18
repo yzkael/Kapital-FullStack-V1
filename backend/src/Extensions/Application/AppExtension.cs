@@ -9,10 +9,7 @@ namespace src.Extensions.Application
     {
         public static void AddAppExtension(this WebApplication app)
         {
-            app.UseExceptionHandler();
-            app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.MapControllers();
+
 
         }
     }

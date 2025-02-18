@@ -13,6 +13,8 @@ using src.Configurations.Options;
 using src.Configurations.Policies.IsSudoPolicy;
 using src.Data;
 using src.Entities.Entities;
+using src.Interfaces.IServices;
+using src.Services;
 
 namespace src.Extensions.Services
 {
@@ -87,6 +89,8 @@ namespace src.Extensions.Services
         public static void ConfigureDependenciesInjections(this IServiceCollection services)
         {
             services.AddScoped<SeederInitialiser>();
+            services.AddScoped<IAuthServices, AuthServices>();
+            services.AddScoped<ITokenServices, TokenServices>();
         }
 
     }

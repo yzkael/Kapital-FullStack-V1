@@ -15,9 +15,11 @@ namespace src.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthServices _authServices;
-        public AuthController(IAuthServices authServices)
+        private readonly ITokenServices _tokenServices;
+        public AuthController(IAuthServices authServices, ITokenServices tokenServices)
         {
             _authServices = authServices;
+            _tokenServices = tokenServices;
         }
 
         [HttpPost]
@@ -28,7 +30,10 @@ namespace src.Controllers
             {
                 BadRequest("Wrong Username or Password");
             }
-            return Ok();
+            var accessToken = await _tokenServices.CreateAccessTokenAsync(loginRequest.ResultObject!);
+            var refreshToken = _tokenServices.CreateRefreshToken(loginRequest.ResultObject!);
+            HttpContext.Response.Cookies.Append("refresh_token", refreshToken);
+            return Ok(new { AccessToken = accessToken });
         }
     }
 }
