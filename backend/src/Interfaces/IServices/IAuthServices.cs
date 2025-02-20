@@ -11,5 +11,7 @@ namespace src.Interfaces.IServices
     public interface IAuthServices
     {
         public Task<Result<Usuario?>> Login(LoginRequestDto loginDto);
+
+        public Task<Result<Usuario?>> Register(RegisterRequestDto registerDto);
     }
 }

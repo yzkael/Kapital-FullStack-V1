@@ -1,0 +1,3 @@
+04:41:57 ERR] An error occurred using the connection to database 'KapitalV1' on server 'tcp://localhost:5432'.
+04:57:50 WRN] The type 'src.Data.Configuration.IdentityRoleConfiguration' was found while scanning assemblies but could not instantiated because it does not have a parameterless constructor.
+04:57:51 ERR] An error occurred using the connection to database 'KapitalV1' on server 'tcp://localhost:5432'.

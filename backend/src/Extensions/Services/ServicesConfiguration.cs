@@ -70,6 +70,7 @@ namespace src.Extensions.Services
 
         public static void ConfigureOptions(this IServiceCollection services, IConfiguration config)
         {
+            services.Configure<RolesData>(config.GetSection(RolesData.Section));
             services.Configure<SudoData>(config.GetSection(SudoData.Section));
         }
 
