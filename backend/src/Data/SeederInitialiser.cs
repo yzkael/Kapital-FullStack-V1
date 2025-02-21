@@ -91,9 +91,32 @@ namespace src.Data
                     Name = "Sudo",
                     NormalizedName = "SUDO"
                 };
+                var roles = new List<IdentityRole>
+                {
+                    new IdentityRole
+                    {
+                        Name = "Usuario",
+                        NormalizedName = "USUARIO"
+                    },
+                    new IdentityRole
+                    {
+                        Name = "Admin",
+                        NormalizedName = "ADMIN"
+                    },
+                    new IdentityRole
+                    {
+                        Name = "Empleado",
+                        NormalizedName = "EMPLEADO"
+                    },
+                    newRole
+                };
+                //If the first one isn't found we can assume that none were seeded
                 if (await _roleManager.FindByNameAsync(newRole.Name) == null)
                 {
-                    await _roleManager.CreateAsync(newRole);
+                    foreach (var role in roles)
+                    {
+                        await _roleManager.CreateAsync(role);
+                    }
                 }
                 var usuario = await _userManager.FindByNameAsync(_sudoData.Username);
                 if (usuario == null)

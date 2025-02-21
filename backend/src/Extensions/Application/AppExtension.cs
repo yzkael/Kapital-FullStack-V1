@@ -9,8 +9,7 @@ namespace src.Extensions.Application
     {
         public static void AddAppExtension(this WebApplication app)
         {
-
-
+            app.ConfigureSeeContext();
         }
     }
 }

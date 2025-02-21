@@ -19,6 +19,7 @@ app.UseExceptionHandler();
 app.UseHttpsRedirection();
 await app.InitialiseDatabaseAsync();
 app.AddAppExtension();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();

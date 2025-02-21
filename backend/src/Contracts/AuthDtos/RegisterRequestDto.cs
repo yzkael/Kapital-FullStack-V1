@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using src.Contracts.CustomFilters;
 
 namespace src.Contracts.AuthDtos
 {
@@ -38,6 +39,7 @@ namespace src.Contracts.AuthDtos
         public string Email { get; init; } = null!;
 
         [Required]
+        [StringRange(AllowableValues = new[] { "Admin", "Usuario", "Empleado" }, ErrorMessage = "Invalid Role Input")]
         public string Role { get; set; } = null!;
     }
 }

@@ -50,8 +50,7 @@ namespace src.Extensions.Services
                 {
                     ValidateIssuer = true,
                     ValidIssuer = config["JWT:Issuer"],
-                    ValidateAudience = true,
-                    ValidAudience = config["JWT:Audience"],
+                    ValidateAudience = false,
                     ValidateLifetime = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"] ?? throw new Exception("Security Key not found within configuration")))
                 };
@@ -65,6 +64,7 @@ namespace src.Extensions.Services
                 options.AddPolicy("SudoPolicy", p => p.AddRequirements(
                     new IsSudoRequirement()
                 ));
+                options.AddPolicy("SudoRole", p => p.RequireRole("Sudo"));
             });
         }
 
