@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -89,6 +90,7 @@ namespace src.Extensions.Services
 
         public static void ConfigureDependenciesInjections(this IServiceCollection services)
         {
+            services.AddSingleton<IAuthorizationHandler, IsSudoHandler>();
             services.AddScoped<SeederInitialiser>();
             services.AddScoped<IAuthServices, AuthServices>();
             services.AddScoped<ITokenServices, TokenServices>();
