@@ -8,6 +8,7 @@ namespace src.Extensions.Application
 {
     public static class AppConfiguration
     {
+        //Made for testing purposes
         public static void ConfigureSeeContext(this WebApplication app)
         {
             app.Use(async (context, next) =>

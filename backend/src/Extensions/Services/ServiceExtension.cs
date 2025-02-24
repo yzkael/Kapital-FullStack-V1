@@ -12,11 +12,11 @@ namespace src.Extensions.Services
             services.AddProblemDetails();
             services.AddExceptionHandler<GlobalExceptionHandler>();
             services.ConfigureSerilog();
+            services.ConfigureIdentity();
+            services.ConfigureDbContext(config);
+            services.ConfigureOptions(config);
             services.ConfigureAuthentication(config);
             services.ConfigureAuthorization(config);
-            services.ConfigureOptions(config);
-            services.ConfigureDbContext(config);
-            services.ConfigureIdentity();
             services.ConfigureDependenciesInjections();
         }
     }

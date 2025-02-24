@@ -53,3 +53,6 @@ System.TypeLoadException: Could not load type '<>f__AnonymousType7`2' from assem
 --- End of stack trace from previous location ---
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task), Exception ocurred: Could not load type '<>f__AnonymousType7`2' from assembly 'src, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
 03:06:52 WRN] Failed to determine the https port for redirect.
+04:01:09 WRN] Failed to determine the https port for redirect.
+04:07:21 WRN] Failed to determine the https port for redirect.
+04:22:52 WRN] Failed to determine the https port for redirect.

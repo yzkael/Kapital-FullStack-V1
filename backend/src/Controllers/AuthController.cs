@@ -26,7 +26,7 @@ namespace src.Controllers
         [Authorize("SudoRole")]
         public IActionResult Test()
         {
-            return Ok("Poto");
+            return Ok();
         }
         [HttpGet]
         [Route("poto")]
@@ -36,6 +36,7 @@ namespace src.Controllers
         }
 
         [HttpPost]
+        [Authorize("SudoRole")]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerDto)
         {

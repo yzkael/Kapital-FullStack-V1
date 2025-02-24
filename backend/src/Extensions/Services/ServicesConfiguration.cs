@@ -39,6 +39,18 @@ namespace src.Extensions.Services
                       });
         }
 
+        public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)
+        {
+            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(config.GetConnectionString("Default")));
+        }
+
+        public static void ConfigureIdentity(this IServiceCollection services)
+        {
+            services.AddIdentity<Usuario, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 6;
+            }).AddEntityFrameworkStores<AppDbContext>();
+        }
         public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration config)
         {
             services.AddAuthentication(options =>
@@ -73,19 +85,6 @@ namespace src.Extensions.Services
         {
             services.Configure<RolesData>(config.GetSection(RolesData.Section));
             services.Configure<SudoData>(config.GetSection(SudoData.Section));
-        }
-
-        public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)
-        {
-            services.AddDbContext<AppDbContext>(options => options.UseNpgsql(config.GetConnectionString("Default")));
-        }
-
-        public static void ConfigureIdentity(this IServiceCollection services)
-        {
-            services.AddIdentity<Usuario, IdentityRole>(options =>
-            {
-                options.Password.RequiredLength = 6;
-            }).AddEntityFrameworkStores<AppDbContext>();
         }
 
         public static void ConfigureDependenciesInjections(this IServiceCollection services)
