@@ -11,6 +11,7 @@ namespace src.Extensions.Services
         {
             services.AddProblemDetails();
             services.AddExceptionHandler<GlobalExceptionHandler>();
+            services.ConfigureCors();
             services.ConfigureSerilog();
             services.ConfigureIdentity();
             services.ConfigureDbContext(config);

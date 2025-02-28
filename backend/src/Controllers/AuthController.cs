@@ -57,7 +57,7 @@ namespace src.Controllers
             Result<Usuario?> loginRequest = await _authServices.Login(loginDto);
             if (!loginRequest.IsSuccessful)
             {
-                BadRequest("Wrong Username or Password");
+                return BadRequest("Wrong Username or Password");
             }
             var accessToken = await _tokenServices.CreateAccessTokenAsync(loginRequest.ResultObject!);
             var refreshToken = _tokenServices.CreateRefreshToken(loginRequest.ResultObject!);

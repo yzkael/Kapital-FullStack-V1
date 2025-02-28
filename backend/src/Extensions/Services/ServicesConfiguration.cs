@@ -95,5 +95,15 @@ namespace src.Extensions.Services
             services.AddScoped<ITokenServices, TokenServices>();
         }
 
+        public static void ConfigureCors(this IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("DevCors", policy =>
+                {
+                    policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                });
+            });
+        }
     }
 }
