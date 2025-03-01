@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
 import MainLayout from "./layouts/MainLayout";
+import LoginPage from "./pages/LoginPage";
 
 const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<Index />} />
+        <Route index element={<LoginPage />} />
       </Route>
     </Routes>
   );
